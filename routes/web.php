@@ -21,3 +21,6 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//the fallback route
+Route::fallback([\App\Http\Controllers\HomeController::class, 'home']);
